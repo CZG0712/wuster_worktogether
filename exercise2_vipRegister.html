@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会员注册</title>
+  </head>
+  <body>
+   <div style="border: 1px solid black;width: 600px;height:720px;display: flex;justify-content: center;" >
+    <div class="wrap" style="margin-left: 10%;">
+      <span class="headline">欢迎注册成为会员用户！</span>
+      <form action="data.html" method="POST" enctype="multipart/form-data">
+        <div class="personal_info">
+          <div class="info_item">
+            <label for="phone_number" class="info_item_head">手机号码:</label>
+            <input
+              type="text"
+              id="phone_number"
+              placeholder="11位手机号"
+              maxlength="11"
+              title="请输入手机号"
+            />
+            <span class="alert_info">必填</span>
+          </div>
+
+          <div class="info_item">
+              <span class="info_item_head">创建密码:</span>
+              <input
+                type="password"
+                placeholder="8位密码"
+                maxlength="8"
+                title="请输入密码"
+              />
+              <span class="alert_info">必填</span>
+          </div>
+
+          <div class="info_item">
+              <span class="info_item_head">注册邮箱:</span>
+              <input
+                type="email"
+                placeholder="例如:wustzz@sina.com"
+                title="请输入邮箱"
+              />
+              <span class="alert_info">必填</span>
+          </div>
+
+          <div class="info_item">
+              <span class="info_item_head" >验证码:</span>
+              <input type="text" placeholder="" />
+              <img id="validimgs" style="margin-left: 8px;" src="./素材/images/validcode1.jpg" alt="验证码" width="40px">
+              <div id="changecode" style="margin-left: 5px;">看不清？换一个！</div>
+          </div>
+
+          <div class="info_item">
+            <span class="info_item_head">性别:</span>
+            <label><input type="radio" name="gender" value="male" />男</label>
+            <label><input type="radio" name="gender" value="female" />女</label>
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">生日:</span>
+            <input type="date" name="birthday" />
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">年龄:</span>
+            <input type="number" name="age" min="10" />
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">籍贯:</span>
+            <select name="province" size="1">
+              <option value="湖北省">湖北省</option>
+              <option value="广东省">广东省</option>
+              <option value="北京市">北京市</option>
+            </select>
+            <select name="city" size="1" style="margin-left: 4px;">
+              <option value="武汉市">武汉市</option>
+              <option value="孝感市">孝感市</option>
+              <option value="咸宁市">咸宁市</option>
+            </select>
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">个人学历:</span>
+            <select name="education" size="1">
+              <option value="初中">初中</option>
+              <option value="高中">高中</option>
+              <option value="大学及以上" selected>大学及以上</option>
+            </select>
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">月薪:</span>
+            <input
+              type="range"
+              id="salary"
+              name="salary"
+              min="1000"
+              max="20000"
+              step="500"
+              value="5000"
+            />
+            <span id="msg"></span>
+            <!-- 用来显示滑块值 -->
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">兴趣爱好:</span>
+            <label
+              ><input
+                type="checkbox"
+                name="hobbies"
+                value="singing"
+              />唱歌</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="hobbies"
+                value="running"
+              />跑步</input
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="hobbies"
+                value="swimming"
+              />游泳</label
+            >
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">个人照片:</span>
+            <input type="file" name="myphoto" accept="image/*">
+          </div>
+          <div class="info_item">
+            <span class="info_item_head">个人简介:</span>
+            <textarea name="introducntion"  cols="30" rows="10" placeholder="请填写个人简介"></textarea>
+          </div>
+        </div>
+        <!-- 功能按钮区域 -->
+        <div class="funcBtns">
+          <button type="submit">提交</button>
+          <button type="reset" style="margin-left: 30px;">重置</button>
+        </div>
+      </form>
+    </div>
+   </div>
+  </body>
+</html>
+<style>
+    body{
+        user-select: none;
+    }
+    .headline{
+        color: rgb(255, 184, 4);
+        font-weight: bold;
+        font-size: 28px;
+       line-height: 80px;
+    }
+    .info_item{
+        display: flex;
+        justify-content: start;
+        margin: 5px 0 10px 2px;
+    }
+    .alert_info{
+        color: red;
+        margin-left: 6px;
+        font-size: 14px;
+    }
+    .info_item_head{
+        font-weight: bolder;
+        text-align: left;
+        width:80px;
+        line-height: 24px;
+    }
+    #changecode{
+        border: 1px black solid;
+        padding-left: 2px;
+        font-size: 10px;
+        width: 96px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 5px;
+        background-color: rgba(231, 231, 231, 0.2);
+        cursor: pointer;
+        border: none;
+        margin-top: 4px;
+    }
+    #changecode:hover{
+      color: blue;
+      text-decoration: underline;
+    }
+    .funcBtns{
+      margin-left: 8%;
+      margin-top: 20px;
+    }
+</style>
+<script>
+  let msg = document.getElementById("msg");
+  window.onload = function () {
+    msg.innerHTML = document.getElementById("salary").value;
+  };
+  document.getElementById("salary").onmousemove = function () {
+    msg.innerHTML = document.getElementById("salary").value;
+    // console.log(this.value);
+  };
+  let imgs=["./素材/images/validcode1.jpg","./素材/images/validcode2.png","./素材/images/validcode3.png"];
+  let n=0
+  document.getElementById("changecode").onclick=function(){
+    //   console.log("123")
+    document.getElementById("validimgs").src=imgs[++n];
+    if(n===2){
+        n=-1
+    }
+  }
+  document.getElementById("validimgs").onclick=function(){
+    this.style.width="60px"
+    setInterval(function(){ document.getElementById("validimgs").style.width="35px"; }, 2000);
+  }
+
+</script>
+
